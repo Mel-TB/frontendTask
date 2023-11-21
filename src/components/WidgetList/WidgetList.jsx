@@ -1,23 +1,32 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+
+import { useState, useEffect } from "react";
 import Widget from "../Widget/Widget";
+import { FetchProductWidgets } from "../../services/FetchProductWidgets";
 
 function WidgetList() {
-  const widgetData = [
-    {
-      id: 1,
-      action: "collects",
-      amount: 100,
-      type: "plastic bottles",
-      active: true,
-      linked: true,
-      selectedColor: "blue",
-    },
-  ];
+  const [widgetsData, setWidgetData] = useState([]);
+
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const data = await FetchProductWidgets();
+        setWidgetData(data);
+      } catch (error) {
+        setError(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <div>
-      {widgetData.map((widget) => (
+      {widgetsData.map((widget) => (
         <Widget
           key={widget.id}
           {...widget}
