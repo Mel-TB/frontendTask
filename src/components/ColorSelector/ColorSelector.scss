@@ -1,0 +1,31 @@
+.color-selector {
+  display: flex;
+  gap: 2px;
+}
+
+.color-box {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid transparent; /* Set a default border */
+}
+
+/* Hide the actual checkbox input */
+.color-selector input[type="checkbox"] {
+  display: none;
+}
+
+.color-checkbox {
+  display: flex;
+}
+
+/* Hover effect for the color box */
+.color-box:hover {
+  box-shadow: 0px 8.5px 8.5px 0px rgba(0, 0, 0, 0.01);
+}
+
+/* Style the color box when the associated checkbox is checked */
+.color-selector input[type="checkbox"]:checked + .color-box {
+  border: 3px solid #b0b0b0; /* Adjust the border as needed */
+}
