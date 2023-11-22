@@ -1,0 +1,22 @@
+$default_text_color: #fff;
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  border-radius: 15px;
+  color: $default_text_color;
+}
+
+.logo {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  position: relative;
+}
+
+.greenspark {
+  width: 55px;
+}
