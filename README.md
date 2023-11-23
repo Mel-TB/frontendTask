@@ -2,7 +2,7 @@
 
 <div align='center'>
 
-![GitHub forks](https://img.shields.io/github/forks/Mel-TB/frontendTask?label=Fork&style=for-the-badge&color=%2378909C)
+![GitHub forks](https://img.shields.io/githubMel-TB/frontendTask/fork?label=Fork&style=for-the-badge&color=%2378909C)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Mel-TB/frontendTask?label=Stars&style=for-the-badge&color=%2378909C)
 
 </div>
