@@ -8,7 +8,7 @@ function mapSelectedColorToHex(widgets) {
       case "black":
         return { ...widget, selectedColor: "#212121" };
       default:
-        return widget; // No change for other colors
+        return widget;
     }
   });
 }

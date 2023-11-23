@@ -5,7 +5,7 @@ function BadgeHeader({ action, amount, type, selectedColor }) {
   const greenColor = "green";
 
   const isLightBackground =
-    selectedColor === "beige" || selectedColor === "white";
+    selectedColor === "#F2EBDB" || selectedColor === "#FFFFFF";
 
   const textStyle = isLightBackground
     ? { color: greenColor }

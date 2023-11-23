@@ -13,12 +13,13 @@ $default_color_text: #212121;
   border-radius: 5px;
   z-index: 1;
   text-align: center;
+  right: 0px;
 }
 
 .link {
   margin-top: 15px;
-
   a {
+    position: relative;
     color: $default_color_link;
     font-weight: 700;
     text-decoration: none;
@@ -27,6 +28,7 @@ $default_color_text: #212121;
 
 @media screen and (max-width: 800px) {
   .tooltip {
+    bottom: 0px;
     right: -50px;
   }
 }

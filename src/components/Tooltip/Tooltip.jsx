@@ -14,7 +14,7 @@ function Tooltip({ children, linked }) {
     >
       {children}
       {showTooltip && (
-        <div className='tooltip'>
+        <div className={`tooltip ${showTooltip ? "tooltip-visible" : ""}`}>
           This widget links directly to your public profile so that you can
           easily share your impact with your customers. Turn it off here if you
           do not want the badge to link to it.
