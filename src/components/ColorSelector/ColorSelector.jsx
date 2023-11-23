@@ -11,7 +11,7 @@ function ColorSelector({ onColorChange, selectedColor }) {
   return (
     <>
       <div className='widget_options'>
-        <label>Badge Color</label>
+        <p htmlFor='badgeColor'>Badge Color</p>
       </div>
       <div className='color-selector'>
         {colorOptions.map((option) => (
@@ -26,7 +26,7 @@ function ColorSelector({ onColorChange, selectedColor }) {
               name='badgeColor'
               value={option.value}
               checked={selectedColor === option.value}
-              onChange='selectedColor'
+              onChange={() => handleColorChange(selectedColor)}
               style={{ display: "none" }}
             />
             <label

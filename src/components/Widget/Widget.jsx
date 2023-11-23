@@ -42,7 +42,7 @@ function Widget({
 
       <div className='widget'>
         <div className='widget_options'>
-          <label htmlFor='checkbox'>Link to Public Profile</label>
+          <label htmlFor='publicView'>Link to Public Profile</label>
           <span className='tooltip_container'>
             <Tooltip linked={isLinked}>
               <FiInfo />
@@ -66,7 +66,7 @@ function Widget({
         </div>
 
         <div className='widget_options'>
-          <label>Activate Badge</label>
+          <p>Activate Badge</p>
           <ToggleSwitch
             isActive={isActive}
             onToggle={onToggle}

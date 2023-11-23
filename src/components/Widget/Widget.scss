@@ -25,6 +25,10 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   color: $default_color_widget;
 }
 
+.widget_options > p {
+  font-size: 14px;
+}
+
 .checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
