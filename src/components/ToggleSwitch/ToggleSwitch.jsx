@@ -1,9 +1,13 @@
 import "./ToggleSwitch.scss";
 
-function ToggleSwitch() {
+function ToggleSwitch({ isActive, onToggle }) {
   return (
     <label className='switch'>
-      <input type='checkbox' />
+      <input
+        type='checkbox'
+        checked={isActive}
+        onChange={onToggle}
+      />
       <span className='slider round'></span>
     </label>
   );

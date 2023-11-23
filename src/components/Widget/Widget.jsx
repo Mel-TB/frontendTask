@@ -1,25 +1,26 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { CiCircleInfo } from "react-icons/ci";
 
+import Tooltip from "../Tooltip/Tooltip";
 import BadgeHeader from "../BadgeHeader/BadgeHeader";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import ColorSelector from "../ColorSelector/ColorSelector";
 
 import "./Widget.scss";
-import Tooltip from "../Tooltip/Tooltip";
 
 function Widget({
   type,
   amount,
   action,
-  active,
+  isActive,
+  onToggle,
   linked,
   selectedColor,
   onColorChange,
 }) {
   const [onSelectColor, setOnSelectColor] = useState(selectedColor);
-
   const [isLinked, setIsLinked] = useState(linked);
 
   const handleColorChange = (color) => {
@@ -44,7 +45,9 @@ function Widget({
           <label htmlFor='checkbox'>
             Link to Public Profile
             <span className='tooltip_container'>
-              <Tooltip linked={isLinked} />
+              <Tooltip linked={isLinked}>
+                <CiCircleInfo />
+              </Tooltip>
             </span>
           </label>
           <input
@@ -66,7 +69,10 @@ function Widget({
 
         <div className='widget_options'>
           <label>Activate Badge</label>
-          <ToggleSwitch />
+          <ToggleSwitch
+            isActive={isActive}
+            onToggle={onToggle}
+          />
         </div>
       </div>
     </div>
