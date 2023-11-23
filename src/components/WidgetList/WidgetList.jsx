@@ -1,41 +1,48 @@
 /* eslint-disable no-unused-vars */
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setWidgets,
+  setActiveWidget,
+  setError,
+} from "../../store/actions/widgetActions";
 
-import { useState, useEffect } from "react";
 import Widget from "../Widget/Widget";
-
 import { FetchProductWidgets } from "../../services/FetchProductWidgets";
 
 import "./WidgetList.scss";
 
 function WidgetList() {
-  const [widgetsData, setWidgetData] = useState([]);
-  const [activeWidgetId, setActiveWidgetId] = useState(null);
-  const [error, setError] = useState(null);
+  const dispatch = useDispatch();
+  const { widgetsData, activeWidgetId, error } = useSelector(
+    (state) => state.widgets
+  );
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await FetchProductWidgets();
-        setWidgetData(data);
+        dispatch(setWidgets(data));
 
         const activeWidget = data.find((widget) => widget.active);
         if (activeWidget) {
-          setActiveWidgetId(activeWidget.id);
+          dispatch(setActiveWidget(activeWidget.id));
         }
-        console.log();
       } catch (error) {
-        setError(error);
+        dispatch(setError(error));
       }
     };
 
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   if (error) return <div>Error: {error.message}</div>;
 
   const handleToggle = (id) => {
-    setActiveWidgetId(activeWidgetId === id ? null : id);
+    dispatch(setActiveWidget(activeWidgetId === id ? null : id));
   };
+
+  if (error) return <div>Error: {error.message}</div>;
 
   return (
     <section>

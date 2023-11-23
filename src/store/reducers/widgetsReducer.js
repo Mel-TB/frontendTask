@@ -2,6 +2,7 @@ const initialState = {
   widgetsData: [],
   activeWidgetId: null,
   error: null,
+  selectedColor: "defaultColor",
 };
 
 function widgetReducer(state = initialState, action) {
