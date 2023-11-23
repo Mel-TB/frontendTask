@@ -23,8 +23,8 @@ function Widget({
   const [onSelectColor, setOnSelectColor] = useState(selectedColor);
   const [isLinked, setIsLinked] = useState(linked);
 
-  const handleColorChange = (color) => {
-    setOnSelectColor(color);
+  const handleColorChange = (selectedColor) => {
+    setOnSelectColor(selectedColor);
   };
 
   const handleLinkedChange = (event) => {
