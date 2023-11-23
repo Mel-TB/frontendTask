@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { useState } from "react";
-import { CiCircleInfo } from "react-icons/ci";
+import { FiInfo } from "react-icons/fi";
 
 import Tooltip from "../Tooltip/Tooltip";
 import BadgeHeader from "../BadgeHeader/BadgeHeader";
@@ -42,14 +42,12 @@ function Widget({
 
       <div className='widget'>
         <div className='widget_options'>
-          <label htmlFor='checkbox'>
-            Link to Public Profile
-            <span className='tooltip_container'>
-              <Tooltip linked={isLinked}>
-                <CiCircleInfo />
-              </Tooltip>
-            </span>
-          </label>
+          <label htmlFor='publicView'>Link to Public Profile</label>
+          <span className='tooltip_container'>
+            <Tooltip linked={isLinked}>
+              <FiInfo />
+            </Tooltip>
+          </span>
           <input
             className='checkbox'
             type='checkbox'
@@ -68,7 +66,7 @@ function Widget({
         </div>
 
         <div className='widget_options'>
-          <label>Activate Badge</label>
+          <p>Activate Badge</p>
           <ToggleSwitch
             isActive={isActive}
             onToggle={onToggle}

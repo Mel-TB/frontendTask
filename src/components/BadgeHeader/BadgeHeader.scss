@@ -1,15 +1,14 @@
 $default_text_color: #fff;
-// TODO: TAKE FONT SIZE
 
 .badge {
   display: flex;
   align-items: center;
-  gap: 20px;
-  border-radius: 15px;
+  gap: 10px;
+  border-radius: 5px;
   color: $default_text_color;
-  padding: 10px 14px 10px 12px;
-  width: 250px;
-  height: 55px;
+  padding-left: 10px;
+  width: 220px;
+  height: 66px;
 }
 
 .logo {
@@ -26,17 +25,11 @@ $default_text_color: #fff;
 
 p {
   margin: 0;
-  font-size: 16px;
-}
-
-.badge-container {
-  display: flex;
-
-  gap: 10px;
+  font-size: 13px;
 }
 
 .badge_text_container p:last-child {
   font-weight: bold;
   font-size: 18px;
-  margin-top: 5px;
+  margin-top: 4px;
 }
