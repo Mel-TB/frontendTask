@@ -1,0 +1,11 @@
+$default_color_text: #3b755f;
+.tooltip {
+  position: absolute;
+  height: 50px;
+  width: 100px;
+  background-color: white;
+  color: $default_color_text;
+  padding: 50px 10px;
+  border-radius: 5px;
+  z-index: 1;
+}
