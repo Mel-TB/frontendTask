@@ -1,11 +1,25 @@
-$default_color_text: #3b755f;
+$default_color_link: #3b755f;
+$default_color_text: #212121;
+
 .tooltip {
+  display: block;
   position: absolute;
-  height: 50px;
-  width: 100px;
+  height: 114px;
+  width: 216px;
   background-color: white;
   color: $default_color_text;
-  padding: 50px 10px;
+  padding: 24px 16px;
   border-radius: 5px;
   z-index: 1;
+  text-align: center;
+}
+
+.link {
+  margin-top: 15px;
+
+  a {
+    color: $default_color_link;
+    font-weight: 700;
+    text-decoration: none;
+  }
 }

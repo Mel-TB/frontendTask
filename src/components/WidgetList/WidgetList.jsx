@@ -22,6 +22,7 @@ function WidgetList() {
         if (activeWidget) {
           setActiveWidgetId(activeWidget.id);
         }
+        console.log();
       } catch (error) {
         setError(error);
       }
@@ -34,7 +35,6 @@ function WidgetList() {
 
   const handleToggle = (id) => {
     setActiveWidgetId(activeWidgetId === id ? null : id);
-    // Optional: Update the API with the new active state
   };
 
   return (
