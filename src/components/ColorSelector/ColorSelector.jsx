@@ -26,7 +26,7 @@ function ColorSelector({ onColorChange, selectedColor }) {
               name='badgeColor'
               value={option.value}
               checked={selectedColor === option.value}
-              onChange='selectedColor'
+              onChange={() => onColorChange(selectedColor)}
               style={{ display: "none" }}
             />
             <label

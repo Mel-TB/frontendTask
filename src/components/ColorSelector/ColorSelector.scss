@@ -4,8 +4,8 @@
 }
 
 .color-box {
-  height: 20px;
-  width: 20px;
+  height: 16px;
+  width: 16px;
   cursor: pointer;
   box-sizing: border-box;
 }
@@ -24,5 +24,5 @@
 }
 
 .color-selector input[type="checkbox"]:checked + .color-box {
-  border: 3px solid #b0b0b0;
+  border: 2px solid #b0b0b0;
 }

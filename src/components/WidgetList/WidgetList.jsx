@@ -11,6 +11,7 @@ import Widget from "../Widget/Widget";
 import { FetchProductWidgets } from "../../services/FetchProductWidgets";
 
 import "./WidgetList.scss";
+import mapSelectedColorToHex from "../../utils/mapSelectedColorToHex";
 
 function WidgetList() {
   const dispatch = useDispatch();
@@ -22,7 +23,8 @@ function WidgetList() {
     const fetchData = async () => {
       try {
         const data = await FetchProductWidgets();
-        dispatch(setWidgets(data));
+        const dataWithUpdatedColors = mapSelectedColorToHex(data);
+        dispatch(setWidgets(dataWithUpdatedColors));
 
         const activeWidget = data.find((widget) => widget.active);
         if (activeWidget) {
