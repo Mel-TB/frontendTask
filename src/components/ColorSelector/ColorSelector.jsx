@@ -1,41 +1,44 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
 import "./ColorSelector.scss";
+import { colorOptions } from "../../constant/colorOptions";
 
-function ColorSelector() {
-  const hardcodedColorOptions = [
-    { label: "Blue", value: "#2E3A8C" },
-    { label: "Green", value: "#3B755F" },
-    { label: "Beige", value: "#F2EBDB" },
-  ];
-
+function ColorSelector({ onColorChange, selectedColor }) {
   const handleColorChange = (color) => {
-    console.log("Badge Color Selected :", color);
+    onColorChange(color);
   };
 
   return (
-    <div className='color-selector'>
-      Badge Color
-      {hardcodedColorOptions.map((option) => (
-        <label
-          key={option.value}
-          className='color-option'
-          title={option.label}
-        >
-          <input
-            type='checkbox'
-            name='badgeColor'
-            value={option.value}
-            onChange={() => handleColorChange(option.label)}
-          />
-          <span
-            style={{ backgroundColor: option.value }}
-            onClick={() => handleColorChange(option.value)}
-          ></span>
-        </label>
-      ))}
-    </div>
+    <>
+      <div className='widget_options'>
+        <label>Badge Color</label>
+      </div>
+      <div className='color-selector'>
+        {colorOptions.map((option) => (
+          <div
+            key={option.value}
+            className='color-checkbox'
+          >
+            <input
+              className='color-input'
+              type='checkbox'
+              id={option.value}
+              name='badgeColor'
+              value={option.value}
+              checked={selectedColor === option.value}
+              onChange='selectedColor'
+              style={{ display: "none" }}
+            />
+            <label
+              htmlFor={option.value}
+              className='color-box'
+              style={{ backgroundColor: option.value }}
+              onClick={() => handleColorChange(option.value)}
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 }
 
