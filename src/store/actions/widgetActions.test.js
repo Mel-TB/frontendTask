@@ -1,8 +1,4 @@
-import {
-  setWidgets,
-  setActiveWidget,
-  setError,
-} from "../../store/actions/widgetActions";
+import { setWidgets, setActiveWidget, setError } from "./widgetActions";
 
 test("setWidgets action", () => {
   const widgets = [{ id: 1, name: "Test Widget" }];
