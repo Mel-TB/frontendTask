@@ -2,8 +2,8 @@
 
 <div align='center'>
 
-![GitHub forks](https://img.shields.io/github/forks/Mel-TB/frontendTask?label=Fork&style=for-the-badge&color=%2378909C)
-![GitHub Repo stars](https://img.shields.io/github/stars/Mel-TB/frontendTask?label=Stars&style=for-the-badge&color=%2378909C)
+
+<a href='mailto:tramimelinda@gmail.com'>![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)</a> <a href='https://fr.linkedin.com/in/melindat'>![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a>
 
 </div>
 <div align='center'>
@@ -116,7 +116,3 @@ yarn test
 
 - Transition to Vue.js and Vuex as per organization's tech stack.
 
-## Contact
-
-Trami Melinda <a href='https://twitter.com/mel_trbd'>
-<a href='mailto:tramimelinda@gmail.com'>![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)</a> <a href='https://fr.linkedin.com/in/melindat'>![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)</a>
