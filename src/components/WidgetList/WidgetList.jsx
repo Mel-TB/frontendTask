@@ -1,5 +1,5 @@
-/* eslint-disable no-unused-vars */
 import { useEffect } from "react";
+import PropTypes from "prop-types";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setWidgets,
@@ -8,10 +8,16 @@ import {
 } from "../../store/actions/widgetActions";
 
 import Widget from "../Widget/Widget";
-import { FetchProductWidgets } from "../../services/FetchProductWidgets";
+import { fetchProductWidgets } from "../../services/FetchProductWidgets";
+import mapSelectedColorToHex from "../../utils/mapSelectedColorToHex";
 
 import "./WidgetList.scss";
-import mapSelectedColorToHex from "../../utils/mapSelectedColorToHex";
+
+/**
+ * Initializes and renders a list of widgets.
+ *
+ * @return {JSX.Element} The rendered widget list.
+ */
 
 function WidgetList() {
   const dispatch = useDispatch();
@@ -20,13 +26,18 @@ function WidgetList() {
   );
 
   useEffect(() => {
+    /**
+     * Fetches data from the FetchProductWidgets API and updates the state with the fetched data.
+     *
+     *
+     */
+
     const fetchData = async () => {
       try {
-        const data = await FetchProductWidgets();
-        const dataWithUpdatedColors = mapSelectedColorToHex(data);
-        dispatch(setWidgets(dataWithUpdatedColors));
-
-        const activeWidget = data.find((widget) => widget.active);
+        const widgets = await fetchProductWidgets();
+        const widgetsWithUpdatedColors = mapSelectedColorToHex(widgets);
+        dispatch(setWidgets(widgetsWithUpdatedColors));
+        const activeWidget = widgets.find((widget) => widget.active);
         if (activeWidget) {
           dispatch(setActiveWidget(activeWidget.id));
         }
@@ -39,6 +50,13 @@ function WidgetList() {
   }, [dispatch]);
 
   if (error) return <div>Error: {error.message}</div>;
+
+  /**
+   * Handles the toggle action for a specific ID.
+   *
+   * @param {number} id - The ID of the widget.
+   *
+   */
 
   const handleToggle = (id) => {
     dispatch(setActiveWidget(activeWidgetId === id ? null : id));
@@ -60,4 +78,9 @@ function WidgetList() {
   );
 }
 
+WidgetList.propTypes = {
+  widgetsData: PropTypes.array,
+  activeWidgetId: PropTypes.number,
+  error: PropTypes.object,
+};
 export default WidgetList;

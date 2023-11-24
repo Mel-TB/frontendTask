@@ -1,15 +1,31 @@
-/* eslint-disable react/prop-types */
 import { useState } from "react";
-
+import PropTypes from "prop-types";
 import "./Tooltip.scss";
+
+/**
+ * Renders a tooltip component that appears when the user hovers over it.
+ *
+ * @param {Object} props - The properties for the tooltip.
+ * @param {ReactNode} props.children - The content to be displayed inside the tooltip.
+ * @param {boolean} props.linked - Determines whether the tooltip is linked to a public profile.
+ * @return {JSX.Element} The rendered tooltip component.
+ */
 
 function Tooltip({ children, linked }) {
   const [showTooltip, setShowTooltip] = useState(false);
 
+  const handleMouseEnter = () => {
+    setShowTooltip(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowTooltip(false);
+  };
+
   return (
     <div
-      onMouseEnter={() => setShowTooltip(true)}
-      onMouseLeave={() => setShowTooltip(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       className='tooltip_wrapper'
     >
       {children}
@@ -26,5 +42,10 @@ function Tooltip({ children, linked }) {
     </div>
   );
 }
+
+Tooltip.propTypes = {
+  children: PropTypes.node.isRequired,
+  linked: PropTypes.bool,
+};
 
 export default Tooltip;

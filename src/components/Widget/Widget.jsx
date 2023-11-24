@@ -1,6 +1,5 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import PropTypes from "prop-types";
 import { FiInfo } from "react-icons/fi";
 
 import Tooltip from "../Tooltip/Tooltip";
@@ -10,6 +9,20 @@ import ColorSelector from "../ColorSelector/ColorSelector";
 
 import "./Widget.scss";
 
+/**
+ * Renders a Widget component.
+ *
+ * @param {object} props - The props object.
+ * @param {string} props.type - The type of the widget.
+ * @param {number} props.amount - The amount of the widget.
+ * @param {string} props.action - The action of the widget.
+ * @param {boolean} props.isActive - Indicates if the widget is active or not.
+ * @param {function} props.onToggle - The function to toggle the widget.
+ * @param {boolean} props.linked - Indicates if the widget is linked or not.
+ * @param {string} props.selectedColor - The selected color of the widget.
+ * @return {JSX.Element} The rendered Widget component.
+ */
+
 function Widget({
   type,
   amount,
@@ -18,19 +31,21 @@ function Widget({
   onToggle,
   linked,
   selectedColor,
-  onColorChange,
 }) {
   const [onSelectColor, setOnSelectColor] = useState(selectedColor);
   const [isLinked, setIsLinked] = useState(linked);
-
-  const handleColorChange = (selectedColor) => {
-    setOnSelectColor(selectedColor);
-  };
-
-  const handleLinkedChange = (event) => {
-    setIsLinked(event.target.checked);
-  };
-
+  const handleColorChange = useCallback(
+    (selectedColor) => {
+      setOnSelectColor(selectedColor);
+    },
+    [setOnSelectColor]
+  );
+  const handleLinkedChange = useCallback(
+    (event) => {
+      setIsLinked(event.target.checked);
+    },
+    [setIsLinked]
+  );
   return (
     <div className='widget_container'>
       <BadgeHeader
@@ -39,7 +54,6 @@ function Widget({
         type={type}
         selectedColor={onSelectColor}
       />
-
       <div className='widget'>
         <div className='widget_options'>
           <label htmlFor='publicView'>Link to Public Profile</label>
@@ -57,14 +71,12 @@ function Widget({
             onChange={handleLinkedChange}
           />
         </div>
-
         <div className='widget_options'>
           <ColorSelector
             onColorChange={handleColorChange}
             selectedColor={onSelectColor}
           />
         </div>
-
         <div className='widget_options'>
           <p>Activate Badge</p>
           <ToggleSwitch
@@ -76,4 +88,14 @@ function Widget({
     </div>
   );
 }
+
+Widget.propTypes = {
+  type: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  action: PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
+  onToggle: PropTypes.func.isRequired,
+  linked: PropTypes.bool.isRequired,
+  selectedColor: PropTypes.string.isRequired,
+};
 export default Widget;

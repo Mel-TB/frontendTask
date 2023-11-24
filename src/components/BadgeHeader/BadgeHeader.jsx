@@ -1,8 +1,19 @@
+import PropTypes from "prop-types";
 import { logo, greenspark } from "../../assets";
+
 import "./BadgeHeader.scss";
-/* eslint-disable react/prop-types */
+
+/**
+ * Renders a badge header component.
+ *
+ * @param {Object} action - The action to be displayed on the badge.
+ * @param {number} amount - The amount to be displayed on the badge.
+ * @param {string} type - The type of badge.
+ * @param {string} selectedColor - The selected color for the badge background.
+ * @return {JSX.Element} The rendered badge header component.
+ */
 function BadgeHeader({ action, amount, type, selectedColor }) {
-  const greenColor = "green";
+  const greenColor = "#3B755F";
 
   const isLightBackground =
     selectedColor === "#F2EBDB" || selectedColor === "#FFFFFF";
@@ -35,7 +46,6 @@ function BadgeHeader({ action, amount, type, selectedColor }) {
           className='greenspark'
         />
       </div>
-
       <div
         className='badge_text_container'
         style={textStyle}
@@ -48,5 +58,12 @@ function BadgeHeader({ action, amount, type, selectedColor }) {
     </div>
   );
 }
+
+BadgeHeader.propTypes = {
+  action: PropTypes.string.isRequired,
+  amount: PropTypes.number.isRequired,
+  type: PropTypes.string.isRequired,
+  selectedColor: PropTypes.string.isRequired,
+};
 
 export default BadgeHeader;

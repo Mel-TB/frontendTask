@@ -1,5 +1,3 @@
-/* eslint-disable no-unused-vars */
-
 import { WidgetList } from "./components";
 import "./styles/global.scss";
 

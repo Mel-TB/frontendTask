@@ -16,11 +16,14 @@ $default_text_color: #fff;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: auto;
+  height: auto;
   position: relative;
 }
 
 .greenspark {
   width: 55px;
+  height: auto;
 }
 
 p {

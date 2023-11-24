@@ -1,8 +1,16 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
-import "./ColorSelector.scss";
+import PropTypes from "prop-types";
 import { colorOptions } from "../../constant/colorOptions";
 
+import "./ColorSelector.scss";
+
+/**
+ * Renders a color selector widget.
+ *
+ * @param {Object} props - The properties object.
+ * @param {function} props.onColorChange - The callback function to be called when the color changes.
+ * @param {string} props.selectedColor - The currently selected color.
+ * @return {JSX.Element} The color selector widget.
+ */
 function ColorSelector({ onColorChange, selectedColor }) {
   const handleColorChange = (color) => {
     onColorChange(color);
@@ -42,4 +50,8 @@ function ColorSelector({ onColorChange, selectedColor }) {
   );
 }
 
+ColorSelector.propTypes = {
+  onColorChange: PropTypes.func.isRequired,
+  selectedColor: PropTypes.string.isRequired,
+};
 export default ColorSelector;
