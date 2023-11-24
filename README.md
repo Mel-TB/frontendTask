@@ -26,11 +26,18 @@
 - [Implementation Details](#implementation-details)
   - [Choice of Technology](#choice-of-technology)
   - [Applications Features](#applications-features)
+     [Responsive Design](#responsive-design)
 - [Running the Project](#running-the-project)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
   - [Starting the Application](#starting-the-application)
-- [Contact](#contact)
+- [Testing](#testing)
+  - [Testing Strategy](#testing-strategy)
+  -[Running Tests](#running-tests)
+- [Project Management](#project-management)
+  - [Jira in Workflow](#jira-in-workflow)
+- [Why These Choices?](#why-these-choices?)
+- [Future Enhancement](#future-enhancement)
    </details
 
 ## About the Project
@@ -45,6 +52,7 @@ This dashboard was created with
 - ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white)
 - ![Yarn](https://img.shields.io/badge/yarn-%232C8EBB.svg?style=for-the-badge&logo=yarn&logoColor=white)
 - ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+- ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 
 ## Implementation Details
 
@@ -105,6 +113,14 @@ This will start the application on localhost:5137 (or the next available port if
 ```sh
 yarn test
 ```
+
+## Project Management
+
+Throughout the development of this project, I utilized Jira for task management and workflow organization. This approach not only helped in maintaining a structured and efficient development process but also ensured that all project requirements were methodically addressed and implemented.
+
+### Jira in Workflow
+- **Task Tracking**: Each feature and bug fix was managed through Jira tickets, enabling clear tracking of progress and dependencies.
+- **Agile Practices**: Adopting Agile methodology via Jira, I ensured iterative development with constant feedback incorporation, aligning closely with industry best practices.
 
 ## Why These Choices?
 
