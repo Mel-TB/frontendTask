@@ -41,8 +41,8 @@ function Widget({
     [setOnSelectColor]
   );
 
-  const handleLinkedChange = (e) => {
-    setIsLinked(e.target.checked);
+  const handleLinkedChange = (event) => {
+    setIsLinked(event.target.checked);
   };
 
   return (
@@ -57,7 +57,7 @@ function Widget({
         <div className='widget_options'>
           <label>Link to Public Profile</label>
           <span className='tooltip_container'>
-            <Tooltip linked={true}>
+            <Tooltip linked={isLinked}>
               <FiInfo />
             </Tooltip>
           </span>
@@ -71,6 +71,7 @@ function Widget({
             onChange={handleLinkedChange}
           />
         </div>
+
         <div className='widget_options'>
           <ColorSelector
             onColorChange={handleColorChange}
