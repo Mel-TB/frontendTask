@@ -40,12 +40,11 @@ function Widget({
     },
     [setOnSelectColor]
   );
-  const handleLinkedChange = useCallback(
-    (event) => {
-      setIsLinked(event.target.checked);
-    },
-    [setIsLinked]
-  );
+
+  const handleLinkedChange = (e) => {
+    setIsLinked(e.target.checked);
+  };
+
   return (
     <div className='widget_container'>
       <BadgeHeader
@@ -56,12 +55,13 @@ function Widget({
       />
       <div className='widget'>
         <div className='widget_options'>
-          <label htmlFor='publicView'>Link to Public Profile</label>
+          <label>Link to Public Profile</label>
           <span className='tooltip_container'>
-            <Tooltip linked={isLinked}>
+            <Tooltip linked={true}>
               <FiInfo />
             </Tooltip>
           </span>
+
           <input
             className='checkbox'
             type='checkbox'
@@ -98,4 +98,5 @@ Widget.propTypes = {
   linked: PropTypes.bool.isRequired,
   selectedColor: PropTypes.string.isRequired,
 };
+
 export default Widget;
