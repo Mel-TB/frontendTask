@@ -1,12 +1,21 @@
+@import "../../styles/global.scss";
+
 section {
   display: flex;
   width: 800px;
   justify-content: space-between;
 }
 
-@media screen and (max-width: 800px) {
+@include mediamaxwidth($layout_breakpoint_mobile) {
   section {
     flex-direction: column;
+    width: fit-content;
+  }
+}
+
+@include mediamaxwidth($layout_breakpoint_tablet) {
+  section {
     width: 100%;
+    gap: 20px;
   }
 }

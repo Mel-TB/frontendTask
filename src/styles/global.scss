@@ -1,7 +1,6 @@
+@import "./mixin.scss";
+@import "./variable.scss";
 @import url("https://fonts.googleapis.com/css2?family=Cabin&display=swap");
-
-$background-color: #f9f9f9;
-$default_black_color: #212121;
 
 #root {
   margin: 0 auto;
@@ -11,33 +10,29 @@ $default_black_color: #212121;
 }
 
 body {
-  background-color: $background-color;
+  background-color: $offwhite_color;
   font-family: "Cabin", sans-serif;
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
   margin-top: 7%;
   border-radius: 8px;
-  box-shadow: 0px 0.77778px 2.99074px 0px rgba(0, 0, 0, 0.01),
-    0px 3.42222px 6.19259px 0px rgba(0, 0, 0, 0.02),
-    0px 8.4px 12.35px 0px rgba(0, 0, 0, 0.03),
-    0px 16.17778px 24.20741px 0px rgba(0, 0, 0, 0.03),
-    0px 27.22222px 44.50926px 0px rgba(0, 0, 0, 0.04),
-    0px 42px 76px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: $box-shadow;
 }
 
 h1 {
   font-size: 30px;
   line-height: 36px;
-  color: $default_black_color;
+  color: $black_color;
 }
 
 hr {
   margin-top: -10px;
-  background-color: #b0b0b0;
+  background-color: $mediumgrey_color;
   height: 1px;
 }
-@media screen and (max-width: 800px) {
+
+@include mediamaxwidth($layout_breakpoint_mobile) {
   body {
     margin-top: none;
     height: 740px;

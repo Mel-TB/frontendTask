@@ -1,5 +1,4 @@
-$default_color_link: #3b755f;
-$default_color_text: #212121;
+@import "../../styles/global.scss";
 
 .tooltip {
   display: flex;
@@ -8,7 +7,7 @@ $default_color_text: #212121;
   height: 114px;
   width: 216px;
   background-color: white;
-  color: $default_color_text;
+  color: $black_color;
   padding: 24px 16px;
   border-radius: 5px;
   z-index: 1;
@@ -20,7 +19,7 @@ $default_color_text: #212121;
   margin-top: 15px;
   a {
     position: relative;
-    color: $default_color_link;
+    color: $color_green;
     font-weight: 700;
     text-decoration: none;
   }

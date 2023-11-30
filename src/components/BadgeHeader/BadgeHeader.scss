@@ -1,11 +1,11 @@
-$default_text_color: #fff;
+@import "../../styles/global.scss";
 
 .badge {
   display: flex;
   align-items: center;
   gap: 10px;
   border-radius: 5px;
-  color: $default_text_color;
+  color: white;
   padding-left: 10px;
   width: 220px;
   height: 66px;

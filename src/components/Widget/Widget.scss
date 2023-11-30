@@ -1,5 +1,4 @@
-$default_color_widget: #3b755f;
-$default_rgba_green: rgba(175, 198, 189, 0.5);
+@import "../../styles/global.scss";
 
 .widget_container {
   display: grid;
@@ -14,7 +13,7 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  gap: 11px;
+  gap: 10px;
 }
 
 .widget_options {
@@ -22,7 +21,7 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  color: $default_color_widget;
+  color: $color_green;
 }
 
 .widget_options > p {
@@ -33,13 +32,13 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-color: #fff;
+  background-color: $white_color;
   margin: 0;
   font: inherit;
   color: currentColor;
   width: 20px;
   height: 20px;
-  border: 2px solid #212121;
+  border: 2px solid $black_color;
   border-radius: 4px;
   position: relative;
 }
@@ -51,7 +50,7 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   left: 50%;
   width: 0.8em;
   height: 0.4em;
-  border: solid white;
+  border: solid $white_color;
   border-width: 0 2px 2px 0;
   transform: translate(-50%, -60%) rotate(-45deg) scaleX(-1);
   opacity: 0;
@@ -61,14 +60,14 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
 .checkbox:hover {
   border-radius: 4px;
   border-color: rgba(33, 33, 33, 0.5);
-  background-color: $default_rgba_green;
-  box-shadow: 0 0 3px 8px $default_rgba_green;
+  background-color: $rgba_green_hover;
+  box-shadow: 0 0 3px 8px $rgba_green_hover;
 }
 
 .checkbox:checked {
   border-radius: 3px;
   border: none;
-  background-color: $default_color_widget;
+  background-color: $color_green;
 }
 
 .checkbox:checked::after {
@@ -81,14 +80,8 @@ $default_rgba_green: rgba(175, 198, 189, 0.5);
   height: 22px;
 }
 
-@media screen and (max-width: 800px) {
-  .widget_container {
-    gap: 10px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+@include mediamaxwidth($layout_breakpoint_mobile) {
   .widget {
-    margin-bottom: 15px;
+    margin-bottom: 2px;
   }
 }
